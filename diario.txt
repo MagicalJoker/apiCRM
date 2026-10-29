@@ -1,0 +1,11 @@
+Los paquetes necesarios para realizar una API son:
+    * controllers
+    * dtos
+    * entities
+    * exeptions
+    * repositories
+    * services
+
+Empezaremos con entities. Ahí se definirán las características. Una clase java por cada tabla.
+
+
