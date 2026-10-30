@@ -6,6 +6,9 @@ Los paquetes necesarios para realizar una API son:
     * repositories
     * services
 
+ El orden a realizar las clases es:
+    entities --> repository -->
+
 Empezaremos con entities. Ahí se definirán las características. Una clase java por cada tabla.
 
 
