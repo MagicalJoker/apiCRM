@@ -9,3 +9,14 @@ Los paquetes necesarios para realizar una API son:
 Empezaremos con entities. Ahí se definirán las características. Una clase java por cada tabla.
 
 
+Se comienza por las entidades y yo he comenzado por una entidad que no contiene ninguna FK.
+Lo que se hace primero es mapear los atributos de cada tabla
+Se recomienda establecer la longitud de los campos como buena práctica
+Luego, se crea un constructor vacío (requerido por JPA)
+Tras crear el constructor vacío, se crea el constructor real
+Ahora, se crean los getters y los setters
+
+
+    En los casos en los que las entidades tengan FK, estas se mapean las tras haber mapeado todos los campos anteriores.
+
+
