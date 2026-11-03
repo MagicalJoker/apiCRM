@@ -12,3 +12,4 @@ public interface ProfesorRepository extends JpaRepository<Profesor, Long> {
     boolean existsByDni(String dni);
     Optional<Profesor> findByDni(String dni);
 }
+
