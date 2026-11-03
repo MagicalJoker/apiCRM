@@ -11,5 +11,4 @@ public record ProfesorResponseDTO(
         String emailPersonal,
         Integer telefonoPersonal,
         Departamento departamento
-) {
-}
+) {}
