@@ -1,0 +1,17 @@
+PAQUETE: controllers
+FUNCIÓN: Exponer la API al exterior: recibir peticiones HTTP y devolver
+respuestas.
+
+- Anotados con @RestController y @RequestMapping("/api/departamentos").
+- Cada método asocia un verbo HTTP con una operación del service:
+    GET    /api/departamentos        -> listar
+    GET    /api/departamentos/{id}   -> buscar por id
+    POST   /api/departamentos        -> crear (201)
+    PUT    /api/departamentos/{id}   -> actualizar
+    DELETE /api/departamentos/{id}   -> eliminar (204)
+- @PathVariable lee el id de la URL; @RequestBody lee el JSON del cuerpo.
+
+QUÉ NO DEBE CONTENER: lógica de negocio ni acceso directo al repository.
+Solo recibe, delega en el service y devuelve.
+
+EJEMPLO: DepartamentoController.java

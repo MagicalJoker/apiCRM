@@ -1,0 +1,13 @@
+PAQUETE: exceptions
+FUNCIÓN: Gestionar los ERRORES de la API de forma limpia y controlada.
+
+- Contendrá excepciones propias, como ResourceNotFoundException
+  (extiende RuntimeException), que el service lanza cuando un
+  registro no existe.
+- Contendrá un @RestControllerAdvice (GlobalExceptionHandler) que
+  captura esas excepciones y las convierte en respuestas HTTP con el
+  código adecuado (404, 409, 400...).
+
+ESTADO ACTUAL: pendiente. Mientras tanto, el service usa
+ResponseStatusException de Spring, que se sustituirá por estas
+excepciones propias.

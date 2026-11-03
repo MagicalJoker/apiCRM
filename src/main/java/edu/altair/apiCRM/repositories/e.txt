@@ -1,0 +1,18 @@
+PAQUETE: repositories
+FUNCIÓN: Acceder a la base de datos (leer, guardar, borrar).
+
+- Una INTERFAZ por entidad que extiende JpaRepository<Entidad, TipoDelId>.
+- Spring genera la implementación automáticamente: heredamos findAll,
+  findById, save, deleteById, existsById...
+- Se pueden añadir consultas derivadas del nombre del método:
+  existsByCodigo(String), findByCodigo(String).
+  El nombre usa el atributo Java de la entidad, no la columna.
+
+QUÉ CONTIENE: solo interfaces, sin código dentro (salvo los métodos
+derivados declarados).
+
+QUÉ NO DEBE CONTENER: lógica de negocio.
+
+QUIÉN LO USA: los services.
+
+EJEMPLO: DepartamentoRepository.java

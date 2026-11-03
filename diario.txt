@@ -23,3 +23,4 @@ Ahora, se crean los getters y los setters
     En los casos en los que las entidades tengan FK, estas se mapean las tras haber mapeado todos los campos anteriores.
 
 
+

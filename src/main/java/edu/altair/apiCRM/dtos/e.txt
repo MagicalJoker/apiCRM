@@ -1,0 +1,20 @@
+PAQUETE: dtos (Data Transfer Objects)
+FUNCIÓN: Definir QUÉ DATOS ENTRAN Y SALEN por la API, sin exponer las
+entidades directamente.
+
+- Se implementan como records (clases inmutables, sin getters/setters
+  escritos a mano; el accesor se llama igual que el campo: dto.codigo()).
+- Por cada entidad hay dos:
+    RequestDTO  -> lo que ENVÍA el cliente (sin id: lo genera la BD).
+    ResponseDTO -> lo que DEVUELVE la API (con id).
+
+POR QUÉ SE USAN:
+- Evitan exponer campos internos de la entidad.
+- Evitan bucles infinitos al convertir relaciones a JSON.
+- Permiten que la API cambie sin cambiar la base de datos, y viceversa.
+
+QUÉ NO DEBE CONTENER: lógica ni anotaciones de JPA.
+
+QUIÉN LOS USA: controllers (entrada/salida) y services (conversión).
+
+EJEMPLO: DepartamentoRequestDTO, DepartamentoResponseDTO

@@ -1,0 +1,16 @@
+PAQUETE: entities
+FUNCIÓN: Representar las TABLAS de la base de datos como clases Java.
+
+- Una clase por tabla (departamento -> Departamento).
+- Cada atributo de la clase es una columna de la tabla.
+- Las anotaciones (@Entity, @Table, @Id, @Column, @ManyToOne...) le dicen
+  a JPA/Hibernate cómo convertir la clase en tabla: PK, NN, UK y FK.
+- Con spring.jpa.hibernate.ddl-auto=update, Hibernate crea la tabla
+  a partir de esta clase.
+
+QUÉ CONTIENE: atributos, constructor vacío (obligatorio), constructor
+completo, getters y setters.
+
+QUÉ NO DEBE CONTENER: lógica de negocio ni consultas.
+
+EJEMPLO: Departamento.java

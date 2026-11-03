@@ -3,24 +3,22 @@ package edu.altair.apiCRM.entities;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "departamento", uniqueConstraints = {
-        @UniqueConstraint(name = "codigo", columnNames = "codigo")
-})
+@Table(name = "departamento")
 
 public class Departamento {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_departamento", nullable = false)
-    private long idDepartamento;
+    private Long idDepartamento;
 
     /**
      * departamento:
-     * 	PK		id_departamento
-     * 	NN, UK	codigo
-     * 	NN		nombre
-     * 	.		descripcion
-     * 	.		telefono
+     *  PK    id_departamento
+     *  NN, UK codigo
+     *  NN    nombre
+     *  .     descripcion
+     *  .     telefono
      */
 
     @Column(name ="codigo", nullable = false, unique = true)
@@ -29,18 +27,18 @@ public class Departamento {
     @Column(name= "nombre", nullable = false)
     private String nombre;
 
-    @Column(name ="descripcion", nullable = true)
+    @Column(name ="descripcion")
     private String descripcion;
 
     @Column (name="telefono")
-    private Integer telefono;
+    private String telefono;
 
 
     //Tras haber mapeado las columnas, se crea un constructor vacío de forma OBLIGATORIA
     public Departamento () {}
 
     //Y ahora se hace el constructor real
-    public Departamento(Long idDepartamento, String codigo, String nombre, String descripcion, Integer telefono) {
+    public Departamento(Long idDepartamento, String codigo, String nombre, String descripcion, String telefono) {
         this.idDepartamento = idDepartamento;
         this.codigo = codigo;
         this.nombre = nombre;
@@ -67,8 +65,8 @@ public class Departamento {
     public void setDescripcion(String descripcion) {this.descripcion = descripcion;}
 
     //El de telefono
-    public Integer getTelefono() {return telefono;}
-    public void setTelefono(Integer telefono) {this.telefono = telefono;}
+    public String getTelefono() {return telefono;}
+    public void setTelefono(String telefono) {this.telefono = telefono;}
 
 
 

@@ -1,0 +1,18 @@
+PAQUETE: services
+FUNCIÓN: La LÓGICA DE NEGOCIO. Es el "cerebro" de la aplicación.
+
+- Anotados con @Service.
+- Reciben el repository por constructor (inyección de dependencias).
+- Implementan las operaciones: listar, buscar por id, crear, actualizar
+  y eliminar.
+- Convierten RequestDTO -> Entidad (toEntity) y Entidad -> ResponseDTO
+  (toResponse).
+- Aplican las reglas: comprobar que un id existe, rechazar códigos
+  duplicados, etc.
+
+QUÉ NO DEBE CONTENER: nada relacionado con HTTP (rutas, verbos).
+Eso es del controller.
+
+FLUJO: Controller -> Service -> Repository -> BD
+
+EJEMPLO: DepartamentoService.java
