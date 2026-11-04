@@ -26,15 +26,25 @@ public class DepartamentoService {
     }
     // Convierte lo que envía el cliente en una entidad. El id va a null: lo asigna la BD
     private Departamento toEntity(DepartamentoRequestDTO request) {
-        return new Departamento(null, request.codigo(), request.nombre(),
-                request.telefono(), request.descripcion());
+        return new Departamento(
+                null,
+                request.codigo(),
+                request.nombre(),
+                request.telefono(),
+                request.descripcion()
+        );
     }
 
     // Convierte una entidad de la BD en el DTO que devuelve la API
     //toResponse: de entidad a Response
     private DepartamentoResponseDTO toResponse(Departamento d) {
-        return new DepartamentoResponseDTO(d.getIdDepartamento(), d.getCodigo(),
-                d.getNombre(), d.getTelefono(), d.getDescripcion());
+        return new DepartamentoResponseDTO(
+                d.getIdDepartamento(),
+                d.getCodigo(),
+                d.getNombre(),
+                d.getTelefono(),
+                d.getDescripcion()
+        );
     }
 
     //Ahora van los 5 métodos del CRUD
