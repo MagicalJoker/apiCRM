@@ -1,0 +1,189 @@
+############################################################
+# DEPARTAMENTO
+############################################################
+
+### 1. Crear Departamento (POST)
+POST http://localhost:8080/api/departamentos
+Content-Type: application/json
+
+{
+  "codigo": "INF",
+  "nombre": "Informática",
+  "descripcion": "Departamento de Informática",
+  "telefono": "958000001"
+}
+
+### 2. Consultar Todos los Departamentos (GET)
+GET http://localhost:8080/api/departamentos
+
+### 3. Actualizar Departamento (PUT)
+PUT http://localhost:8080/api/departamentos/1
+Content-Type: application/json
+
+{
+  "codigo": "INF",
+  "nombre": "Informática y Comunicaciones",
+  "descripcion": "Departamento actualizado",
+  "telefono": "958000002"
+}
+
+### 4. Probar Código Duplicado (POST)
+POST http://localhost:8080/api/departamentos
+Content-Type: application/json
+
+{
+  "codigo": "INF",
+  "nombre": "Otro Departamento",
+  "descripcion": "Debe fallar por código duplicado",
+  "telefono": "958000003"
+}
+
+### 5. Eliminar Departamento (DELETE)
+DELETE http://localhost:8080/api/departamentos/1
+
+
+############################################################
+# PROFESOR
+############################################################
+
+### 1. Crear Profesor (POST)
+POST http://localhost:8080/api/profesores
+Content-Type: application/json
+
+{
+  "nombre": "Regino",
+  "apellidos": "Fernández García",
+  "dni": "12345678A",
+  "emailCentro": "rfg@altair.edu.es",
+  "emailPersonal": "rfg@gmail.com",
+  "telefonoPersonal": 600111222,
+  "departamento": {
+    "idDepartamento": 1
+  }
+}
+
+### 2. Consultar Todos los Profesores (GET)
+GET http://localhost:8080/api/profesores
+
+### 3. Actualizar Profesor (PUT)
+PUT http://localhost:8080/api/profesores/1
+Content-Type: application/json
+
+{
+  "nombre": "Regino",
+  "apellidos": "Fernández García",
+  "dni": "12345678A",
+  "emailCentro": "rfg@altair.edu.es",
+  "emailPersonal": "rfg@gmail.com",
+  "telefonoPersonal": 600111333,
+  "departamento": {
+    "idDepartamento": 1
+  }
+}
+
+### 4. Probar DNI Duplicado (POST)
+POST http://localhost:8080/api/profesores
+Content-Type: application/json
+
+{
+  "nombre": "Suplantador de identidad",
+  "apellidos": "García López",
+  "dni": "12345678A",
+  "emailCentro": "otro@altair.edu.es",
+  "emailPersonal": "hola@adios.es",
+  "telefonoPersonal": 600111444,
+  "departamento": {
+    "idDepartamento": 1
+  }
+}
+
+### 5. Eliminar Profesor (DELETE)
+DELETE http://localhost:8080/api/profesores/1
+
+
+############################################################
+# TITULACION
+############################################################
+
+### 1. Crear Titulación (POST)
+POST http://localhost:8080/api/titulaciones
+Content-Type: application/json
+
+{
+  "codigo": "77889900",
+  "diminutivo": "DAW",
+  "horasTotales": 2000
+}
+
+### 2. Consultar Todas las Titulaciones (GET)
+GET http://localhost:8080/api/titulaciones
+
+### 3. Actualizar Titulación (PUT)
+PUT http://localhost:8080/api/titulaciones/1
+Content-Type: application/json
+
+{
+  "codigo": "77889900",
+  "diminutivo": "DAW",
+  "horasTotales": 2100
+}
+
+### 4. Probar Código Duplicado (POST)
+POST http://localhost:8080/api/titulaciones
+Content-Type: application/json
+
+{
+  "codigo": "77889900",
+  "diminutivo": "ASIR",
+  "horasTotales": 2000
+}
+
+### 5. Eliminar Titulación (DELETE)
+DELETE http://localhost:8080/api/titulaciones/1
+
+
+############################################################
+# CURSO
+############################################################
+
+### 1. Crear Curso (POST)
+POST http://localhost:8080/api/cursos
+Content-Type: application/json
+
+{
+  "diminutivo": "CSI 1",
+  "descripcion": "Primer curso de DAW",
+  "titulacion": {
+    "idTitulacion": 1
+  }
+}
+
+### 2. Consultar Todos los Cursos (GET)
+GET http://localhost:8080/api/cursos
+
+### 3. Actualizar Curso (PUT)
+PUT http://localhost:8080/api/cursos/1
+Content-Type: application/json
+
+{
+  "diminutivo": "CSI 1",
+  "descripcion": "Primer curso de DAW actualizado",
+  "titulacion": {
+    "idTitulacion": 1
+  }
+}
+
+### 4. Probar Diminutivo Duplicado (POST)
+POST http://localhost:8080/api/cursos
+Content-Type: application/json
+
+{
+  "diminutivo": "CSI 1",
+  "descripcion": "Debe fallar por diminutivo duplicado",
+  "titulacion": {
+    "idTitulacion": 1
+  }
+}
+
+### 5. Eliminar Curso (DELETE)
+DELETE http://localhost:8080/api/cursos/1
